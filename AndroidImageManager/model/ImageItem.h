@@ -9,6 +9,19 @@
 #import <Appkit/Appkit.h>
 #import "File.h"
 
+
+@interface ImageDateSource : NSObject
+
++ (instancetype)shared;
+
+@property (nonatomic, strong) NSMutableDictionary *drawables;
+@property (nonatomic, strong) NSMutableDictionary *mipmaps;
+
+@property (nonatomic, strong) NSArray *drawableList;
+@property (nonatomic, strong) NSArray *mipmapList;
+
+@end
+
 @interface ImageItem : NSObject
 
 + (instancetype)itemWithFile:(File *)file root:(File *)root;

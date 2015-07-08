@@ -8,12 +8,53 @@
 
 #import "ImageItem.h"
 
-@interface ImageItem () {
-    @private
-    //NSImage *_image;
+static ImageDateSource *_instance;
+
+@implementation ImageDateSource
+
++ (instancetype)shared {
+    @synchronized(self) {
+        if (_instance == nil) {
+            _instance = [[ImageDateSource alloc] init];
+        }
+    }
+    return _instance;
 }
 
++ (instancetype)allocWithZone:(struct _NSZone *)zone {
+    @synchronized(self) {
+        if (_instance == nil) {
+            return [super allocWithZone:zone];
+        }
+    }
+    return _instance;
+}
+
+- (id)copy { return _instance; }
+
+- (instancetype)init {
+    @synchronized(self) {
+        if (_instance == nil) {
+            self = [super init];
+            if (self) {
+                _drawableList = @[];
+                _mipmapList = @[];
+                _drawables = [NSMutableDictionary dictionary];
+                _mipmaps = [NSMutableDictionary dictionary];
+            }
+            _instance = self;
+        }
+    }
+    return _instance;
+}
+
+@synthesize drawableList = _drawableList;
+@synthesize mipmapList = _mipmapList;
+@synthesize drawables = _drawables;
+@synthesize mipmaps = _mipmaps;
+
 @end
+
 
 @implementation ImageItem
 
