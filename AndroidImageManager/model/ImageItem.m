@@ -37,8 +37,8 @@ static ImageDateSource *_instance;
         if (_instance == nil) {
             self = [super init];
             if (self) {
-                _drawableList = @[];
-                _mipmapList = @[];
+                //_drawableList = @[];
+                //_mipmapList = @[];
                 _drawables = [NSMutableDictionary dictionary];
                 _mipmaps = [NSMutableDictionary dictionary];
             }
@@ -48,8 +48,8 @@ static ImageDateSource *_instance;
     return _instance;
 }
 
-@synthesize drawableList = _drawableList;
-@synthesize mipmapList = _mipmapList;
+//@synthesize drawableList = _drawableList;
+//@synthesize mipmapList = _mipmapList;
 @synthesize drawables = _drawables;
 @synthesize mipmaps = _mipmaps;
 

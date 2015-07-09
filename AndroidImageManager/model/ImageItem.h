@@ -17,8 +17,8 @@
 @property (nonatomic, strong) NSMutableDictionary *drawables;
 @property (nonatomic, strong) NSMutableDictionary *mipmaps;
 
-@property (nonatomic, strong) NSArray *drawableList;
-@property (nonatomic, strong) NSArray *mipmapList;
+//@property (nonatomic, strong) NSArray *drawableList;
+//@property (nonatomic, strong) NSArray *mipmapList;
 
 @end
 

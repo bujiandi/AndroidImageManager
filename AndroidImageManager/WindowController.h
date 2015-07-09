@@ -8,7 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class ViewController;
+@class SideController;
+@interface WindowController : NSWindowController <NSSplitViewDelegate, NSWindowDelegate>
 
-@interface WindowController : NSWindowController
+@property (nonatomic, weak) IBOutlet NSPathControl *pathControl;
+
+@property (nonatomic, weak) ViewController *viewController;
+@property (nonatomic, weak) SideController *sideController;
 
 @end

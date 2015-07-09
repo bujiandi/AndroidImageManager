@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet NSOutlineView *outlineView;
 @property (weak, nonatomic) SideController *sideController;
 
+- (void)loadData:(NSMutableArray *)imageItems;
+
 @end
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		391382261B4E0BA400B1AEC6 /* SplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 391382251B4E0BA400B1AEC6 /* SplitViewController.m */; };
 		39EB04131B4B849400987F31 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EB04121B4B849400987F31 /* AppDelegate.m */; };
 		39EB04151B4B849400987F31 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EB04141B4B849400987F31 /* main.m */; };
 		39EB04181B4B849400987F31 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 39EB04171B4B849400987F31 /* ViewController.m */; };
@@ -21,6 +22,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		391382241B4E0BA400B1AEC6 /* SplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SplitViewController.h; sourceTree = "<group>"; };
+		391382251B4E0BA400B1AEC6 /* SplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SplitViewController.m; sourceTree = "<group>"; };
 		39EB040C1B4B849400987F31 /* AndroidImageManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AndroidImageManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		39EB04101B4B849400987F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		39EB04111B4B849400987F31 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -79,6 +82,8 @@
 				39EB04121B4B849400987F31 /* AppDelegate.m */,
 				39EB04351B4B865B00987F31 /* WindowController.h */,
 				39EB04361B4B865B00987F31 /* WindowController.m */,
+				391382241B4E0BA400B1AEC6 /* SplitViewController.h */,
+				391382251B4E0BA400B1AEC6 /* SplitViewController.m */,
 				39EB04321B4B863F00987F31 /* SideController.h */,
 				39EB04331B4B863F00987F31 /* SideController.m */,
 				39EB04161B4B849400987F31 /* ViewController.h */,
@@ -190,6 +195,7 @@
 				39EB04411B4B946400987F31 /* NSString+Util.m in Sources */,
 				39EB04181B4B849400987F31 /* ViewController.m in Sources */,
 				39EB04151B4B849400987F31 /* main.m in Sources */,
+				391382261B4E0BA400B1AEC6 /* SplitViewController.m in Sources */,
 				39EB043E1B4B891F00987F31 /* File.m in Sources */,
 				39EB04131B4B849400987F31 /* AppDelegate.m in Sources */,
 			);
@@ -329,6 +335,7 @@
 				39EB042E1B4B849400987F31 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

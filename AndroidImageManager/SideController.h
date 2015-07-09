@@ -15,4 +15,6 @@
 @property (weak, nonatomic) IBOutlet NSOutlineView *outlineView;
 @property (weak, nonatomic) ViewController *viewController;
 
+- (void)reloadData;
+
 @end
