@@ -9,12 +9,19 @@
 #import <Cocoa/Cocoa.h>
 
 @class SideController;
-@interface ViewController : NSViewController <NSOutlineViewDataSource, NSOutlineViewDelegate>
+@interface ViewController : NSViewController
 
-@property (weak, nonatomic) IBOutlet NSOutlineView *outlineView;
+@property (weak, nonatomic) IBOutlet NSTableView *tableView;
 @property (weak, nonatomic) SideController *sideController;
 
 - (void)loadData:(NSMutableArray *)imageItems;
 
 @end
 
+@interface ViewController (NSTableViewDataSource) <NSTableViewDataSource>
+
+@end
+
+@interface ViewController (NSTableViewDelegate) <NSTableViewDelegate>
+
+@end

@@ -18,7 +18,7 @@
 
 @implementation ViewController
 
-@synthesize outlineView = _outlineView;
+@synthesize tableView = _tableView;
 @synthesize sideController = _sideController;
 
 - (void)viewDidLoad {
@@ -35,21 +35,47 @@
 
 - (void)loadData:(NSMutableArray *)imageItems {
     _imageItems = imageItems;
-//    [_outlineView sizeLastColumnToFit];
-//    [_outlineView reloadItem:nil];
-    [_outlineView reloadData];
-    //[_outlineView reloadItem:nil reloadChildren:YES];
+    [_tableView reloadData];
 
-//    _outlineView.floatsGroupRows = false;
-//    
-//    [NSAnimationContext beginGrouping];
-//    [NSAnimationContext currentContext].duration = 0;
-//    [_outlineView expandItem:nil expandChildren:true];
-//    [NSAnimationContext endGrouping];
 }
 
 @end
 
+@implementation ViewController (NSTableViewDataSource)
+
+- (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
+    return _imageItems.count;
+}
+
+/* This method is required for the "Cell Based" TableView, and is optional for the "View Based" TableView. If implemented in the latter case, the value will be set to the view at a given row/column if the view responds to -setObjectValue: (such as NSControl and NSTableCellView).
+ */
+- (id)tableView:(NSTableView *)tableView objectValueForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    NSArray *images = _imageItems[row];
+    ImageItem *image = images[0];
+    return image.name;
+}
+
+@end
+
+@implementation ViewController (NSTableViewDelegate)
+
+- (NSView *)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
+    
+    NSTableCellView *cell = [tableView makeViewWithIdentifier:@"TableCell" owner:self];
+    
+    
+    NSArray *images = _imageItems[row];
+    ImageItem *image = images[0];
+    
+    cell.textField.stringValue = image.name;
+    
+    return cell;
+    
+}
+
+@end
+
+/*
 #pragma mark - NSOutlineViewDataSource
 @implementation ViewController (NSOutlineViewDataSource)
 
@@ -104,13 +130,14 @@
         NSArray *images = _imageItems[index - 1];
         ImageItem *image = images[0];
         cell.textField.stringValue = image.name;
-        NSLog(@"row:%d CELL:%@", index,[item className]);
+        NSLog(@"row:%ld CELL:%@", (long)index,[item className]);
         return cell;
     }
-    NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"DataCell" owner:self];
+    NSTableCellView *cell = [outlineView makeViewWithIdentifier:@"HeaderCell" owner:self];
     cell.textField.stringValue = item;
     NSLog(@"cell:%@",item);
     return cell;
 }
 
 @end
+*/
